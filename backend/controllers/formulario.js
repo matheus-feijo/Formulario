@@ -10,8 +10,8 @@ module.exports = dados =>{
     })
 
     dados.get("/formulario/listagem",(req,res)=>{
-        formulario.lista(res)
-        console.log("estou fazendo um get")
+        //formulario.lista(res)
+        res.json({message:"OLA DEI UM GET AGORA"})
 
     })
 }

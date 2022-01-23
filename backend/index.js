@@ -1,7 +1,7 @@
 const customExpress = require('./config/customExpress')
 const conexao = require("./infraestrutura/conex")
 const Tabela = require('./infraestrutura/tabela')
-
+const cors = require("cors")
 
 conexao.connect((error)=>{
     if(error){
@@ -11,6 +11,7 @@ conexao.connect((error)=>{
         Tabela.init(conexao)
         const app = customExpress()
 
-        app.listen(3001)
+    
+        app.listen(5000)
     }
 })

@@ -3,7 +3,7 @@ import DadosPessoais from "./DadosPessoais";
 import DadosUsuario from "./DadosUsuario";
 import DadosEntrega from "./DadosEntrega";
 import { Step, StepLabel, Stepper, Typography } from "@material-ui/core";
-import axios from "axios";
+import api from "api"
 
 function FormularioCadastro() {
   const [etapa,setEtapa] = useState(0);
@@ -30,12 +30,15 @@ function FormularioCadastro() {
   }
 
   async function enviaDados(){
-  
-    axios.post("/formulario/adicionar",dados).then((response)=>{
-      console.log(response.data);
-    }).catch((erro)=>{
-      console.log(erro)
-    })
+    try {
+      api.post("/formulario/adicionar",dados);
+
+    } catch (error) {
+      console.error(error)
+    }
+    
+
+    
   
 }
   
